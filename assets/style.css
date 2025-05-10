@@ -195,10 +195,17 @@
   padding: 10px;
 }
 .menu-toggle {
-  display: block;
+  display: flex;
+  flex
   font-size: 1.5rem;
   text-align: right;
   padding: 10px;
+}
+.menu-header{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
 }
 
   .header ul {
