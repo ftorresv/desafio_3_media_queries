@@ -3,7 +3,6 @@
     display: grid;
     grid-template-columns: repeat(5, 1fr);
     grid-template-rows: repeat(5, 1fr);
-    gap: 10px;
     grid-template-areas:
       "menu header header header header"
       "menu main main main main"
@@ -12,18 +11,43 @@
       "footer main main main main";
     height: 100vh;
     padding: 10px;
+    overflow-x: hidden;
   }
   
   /* Asignación de las áreas */
   .header {
     grid-area: header;
-    background:  #ddbb99;
-    color: brown;
+    background:  #bfbfbf;
+    color: black;
     display: flex;
     align-items: center;
     justify-content: center;;
     padding: 0 1rem; 
   }
+ .header-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+}
+.select{
+  width: 100%;
+}
+
+#orden-select {
+  padding: 8px 12px;
+  font-size: 1rem;
+  border: 1px solid #aaa;
+  border-radius: 5px;
+  font-family: inherit;
+  cursor: pointer;
+}
+
+#orden-select:focus {
+  outline: none;
+  border-color: #749c2c;
+}
   
   .header ul {
     display: flex;
@@ -41,12 +65,14 @@
   }
 .menu-tittle{
   display:flex;
-  margin: 20px
+  justify-content: center;;
+  margin: 20px;
   padding: 200px;
 }
   .menu {
     grid-area: menu;
-    background: #bdf;
+    background: rgb(36, 59, 142);
+    color:white;
     display: flex;
     flex-direction: column;
    justify-content: space-evenly;
@@ -61,6 +87,11 @@
      justify-content: space-evenly;
     gap: 1rem;
   }
+  .menu-toggle {
+  display: none;
+  cursor: pointer;
+}
+
   .menu-list a {
     text-decoration: none;
     color: inherit;
@@ -76,39 +107,100 @@
 }
   /*Grilla "main" anidada dentro de grilla "container"*/
   .main {
-    grid-area: main;
-    background: #def;
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(2, 1fr);
-    gap: 10px;
-    grid-template-areas:
-      "main-left main-right"
-      "main-left main-right";
-    height: 60vh;
-    padding: 10px;
-  }
-    /* Estas dos áreas corresponden a las áreas dentro de la grilla "main" */
-  .main-left{
-    grid-area: main-left;
-    background: #def;
-    display: flex;
-    align-items: center;
-  }
-  .main-right{
-    grid-area: main-right;
-    background: #def;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    align-items: center;
-  }
+  margin: 10px;
+  grid-area: main;
+  background: #def;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 10px;
+  width: 98%;
+  padding: 10px;
+  overflow: scroll;
+  height: 100%;
+}
+   .card {
+  padding: 10px 10px 20px 10px;
+  border: 1px solid #BFBFBF;
+  background-color: white;
+  box-shadow: 5px 5px 5px #aaaaaa;
+  text-align: center;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+    .card img{
+      object-fit: cover;
+    }
+  
+  .pagination {
+  grid-column: 1 / -1; /* hace que ocupe toda la fila */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  padding: 10px 0;
+  font-weight: bold;
+}
+
+.pagination .current {
+  background-color: #115f9f;
+  color: white;
+  padding: 5px 10px;
+  border-radius: 5px;
+}
+
+
+
   
   .footer {
-    grid-area: footer;
-    background: #9cf;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
+  grid-area: footer;
+  background: rgb(5, 9, 61);
+  color:white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 1rem;
+}
+.icons{
+  display: block;
+}
+.social-icons{
+  display: flex;
+  gap: 5px; 
+  font-size: 1.5rem; 
+}
+@media (max-width: 576px) {
+  .container {
+    grid-template-columns: 100%;
+    grid-template-rows: 1fr 1fr 10fr 1fr;
+    grid-template-areas:
+      "menu"
+      "header"
+      "main"
+      "footer";
   }
+  .menu-list {
+  display: none;
+}
+.header{
+  padding: 10px;
+}
+.menu-toggle {
+  display: block;
+  font-size: 1.5rem;
+  text-align: right;
+  padding: 10px;
+}
+
+  .header ul {
+    flex-direction: column;
+    align-items: center;
+  }
+  .main{
+    grid-template-columns: 1fr;
+    padding: 0;
+    margin: 0;
+  }
+}

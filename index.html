@@ -22,55 +22,82 @@
   <body>
     <section class="container">
       <header class="header">
-           Ordenar por
+     <div class="header-content">
+    <label for="orden-select">Ordenar por:</label>
+    <select class="select">
+      <option value="precio" selected>Precio</option>
+      <option value="relevancia">Relevancia</option>
+      <option value="nombre">Nombre</option>
+      <option value="reciente">Más reciente</option>
+    </select>
+  </div>
       </header>
 
       <nav class="menu">
-        <div class="menu-title">
-          <i class="fa-solid fa-car"></i>
-          Electric cars
-        </div>
-        <ul class="menu-list">
-          <li>
-            <a href="#">Inicio <i class="fas fa-tag"></i></a>
-          </li>
-          <li>
-            <a href="#">Catálogo <i class="fa-solid fa-book"></i></a>
-          </li>
-          <li>
-            <a href="#">Ofertas <i class="fa-solid fa-tags"></i></i></a>
-          </li>
-          <li>
-            <a href="#">Contacto <i class="fa-solid fa-paper-plane"></i></a>
-          </li>
+  <div class="menu-title">
+    <i class="fa-solid fa-car"></i>
+    Electric cars
+  </div>
+  <div class="menu-toggle">
+    <i class="fa-solid fa-bars"></i>
+  </div>
+  <ul class="menu-list">
+    <li><a href="#">Inicio <i class="fas fa-tag"></i></a></li>
+    <li><a href="#">Catálogo <i class="fa-solid fa-book"></i></a></li>
+    <li><a href="#">Ofertas <i class="fa-solid fa-tags"></i></a></li>
+    <li><a href="#">Contacto <i class="fa-solid fa-paper-plane"></i></a></li>
+  </ul>
+</nav>
 
-        </ul>
-      </nav>
       <main class="main">
-        <!-- Se explorará ahora la alternativa de hacer una grilla dentro de main con dos columnas, cada una con el mismo ancho. -->
-        <div class="main-left">
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni
-            omnis, dignissimos consequuntur facilis cumque aperiam? Laborum
-            quae, dolor nesciunt similique inventore optio id ipsa voluptas
-            repudiandae molestias, vel nemo. Sit.
-          </p>
-          <img src="#" alt="foto_galería" />
-        </div>
-        <div class="main-right">
-          <img src="#" alt="foto_galería" />
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Et amet
-            dolor quidem reiciendis necessitatibus expedita! Aspernatur
-            doloremque nobis quidem minima ipsa qui, cumque quia eum molestiae
-            illum vel tempore ducimus.
-          </p>
-        </div>
+       <div class="card">
+        <img src="https://picsum.photos/200/300?random=1">
+            <p> imagen 1</p>
+            <button>Comprar</button>
+        </div> 
+       <div class="card">
+<img src="https://picsum.photos/200/300?random=2">
+<p> imagen 1</p>
+<button>Comprar</button>
+       </div> 
+              <div class="card">
+<img src="https://picsum.photos/200/300?random=3">
+<p> imagen 1</p>
+<button>Comprar</button>
+       </div> 
+              <div class="card">
+<img src="https://picsum.photos/200/300?random=4">
+<p> imagen 1</p>
+<button>Comprar</button>
+       </div> 
+              <div class="card">
+<img src="https://picsum.photos/200/300?random=5">
+<p> imagen 1</p>
+<button>Comprar</button>
+       </div> 
+       <div class="card">
+<img src="https://picsum.photos/200/300?random=6">
+<p> imagen 1</p>
+<button>Comprar</button>
+       </div> 
+       <!-- Se explorará ahora la alternativa de hacer una grilla dentro de main con dos columnas, cada una con el mismo ancho. -->
+        
+   <div class="pagination">
+  <a href="#" class="current">1</a>
+  <a href="#">2</a>
+  <a href="#">3</a>
+</div>
+
       </main>
-      <footer class="footer">
-        Footer <br />
-        2025 &copy; Todos los derechos reservados
-      </footer>
+    <footer class="footer">
+  
+  <div class="social-icons">
+    <i class="fa-brands fa-square-facebook"></i>
+    <i class="fa-brands fa-instagram"></i> 
+  </div> 
+  2025 &copy; Todos los derechos reservados
+</footer>
+
     </section>
   </body>
 </html>
