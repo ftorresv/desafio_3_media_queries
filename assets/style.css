@@ -1,6 +1,108 @@
-body {
-  font-family: "Varta", sans-serif;
-  font-optical-sizing: auto;
-  font-weight: <weight>;
-  font-style: normal;
+.container {
+  font-family: "Poppins", 'Courier New', Courier, monospace;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+    gap: 10px;
+    grid-template-areas:
+      "menu header header header header"
+      "menu main main main main"
+      "menu main main main main"
+      "menu main main main main"
+      "footer main main main main";
+    height: 100vh;
+    padding: 10px;
+  }
+  
+  /* Asignación de las áreas */
+  .header {
+    grid-area: header;
+    background:  #ddbb99;
+    color: brown;
+    display: flex;
+    align-items: center;
+    padding: 0 1rem; 
+  }
+  
+  .header ul {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    height: 100%;
+    list-style: none;      
+    margin: 0;              
+    padding: 0;            
+    align-items: center;   
+  }
+  .header ul a{
+    text-decoration: none;
+    color: inherit;
+  }
+
+  .menu {
+    grid-area: menu;
+    background: #bdf;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .menu-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  .menu-list a {
+    text-decoration: none;
+    color: inherit;
+    font-weight: bold;
+  }
+  .menu-list i,
+.header ul i {
+  margin-left: 0.5rem;
 }
+.header ul i {
+  margin-left: 0;
+  margin-right: 0.5rem;
+}
+  /*Grilla "main" anidada dentro de grilla "container"*/
+  .main {
+    grid-area: main;
+    background: #def;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 10px;
+    grid-template-areas:
+      "main-left main-right"
+      "main-left main-right";
+    height: 60vh;
+    padding: 10px;
+  }
+    /* Estas dos áreas corresponden a las áreas dentro de la grilla "main" */
+  .main-left{
+    grid-area: main-left;
+    background: #def;
+    display: flex;
+    align-items: center;
+  }
+  .main-right{
+    grid-area: main-right;
+    background: #def;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+  }
+  
+  .footer {
+    grid-area: footer;
+    background: #9cf;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
